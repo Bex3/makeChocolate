@@ -36,32 +36,32 @@ public class ChocolateSolverTest {
     @Test
     public void testNoBigsNoSmalls() throws Exception {
         int numSmalls = solver.makeChocolate(0,0,2);
-        assertEquals(2, numSmalls);
+        assertEquals(-1, numSmalls);
     }
     @Test
     public void testEnoughBigsEnoughSmalls() throws Exception {
         int numSmalls = solver.makeChocolate(3, 5, 28);
-        assertEquals(28, numSmalls);
+        assertEquals(3, numSmalls);
     }
     @Test
     public void testNegativeBigsNegativeSmalls() throws Exception {
         int numSmalls = solver.makeChocolate(-3, -4, 23);
-        assertEquals(23, numSmalls);
+        assertEquals(-1, numSmalls);
     }
     @Test
     public void testNegativeBigsPositiveSmalls() throws Exception {
         int numSmalls = solver.makeChocolate(2, -3, 17);
-        assertEquals(17, numSmalls);
+        assertEquals(-1, numSmalls);
     }
     @Test
     public void testPositiveBigsNegativeSmalls() throws Exception {
         int numSmalls = solver.makeChocolate(-3,10,53);
-        assertEquals(53, numSmalls);
+        assertEquals(-1, numSmalls);
     }
     @Test
     public void testMoreBigsThanNeededEnoughSmalls() throws Exception {
         int numSmalls = solver.makeChocolate(3,9,33);
-        assertEquals(33, numSmalls);
+        assertEquals(3, numSmalls);
     }
 
 }

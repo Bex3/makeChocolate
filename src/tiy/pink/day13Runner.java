@@ -5,6 +5,7 @@ package tiy.pink;
  */
 public class day13Runner {
     public static void main(String[] args) {
+     ChocolateSolver myChocolateSolver = new ChocolateSolver();
 
     }
 }
