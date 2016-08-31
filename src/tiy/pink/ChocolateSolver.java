@@ -25,9 +25,9 @@ public class ChocolateSolver {
             return 0;
         } else if (small >= goal - bigs) {
             if (big == 0) {
-                return small;
+                return goal ;
             } else {
-                return (small = (goal % bigs));
+                return (goal % bigs);
             }
         }else if (small == goal){
             return small;
