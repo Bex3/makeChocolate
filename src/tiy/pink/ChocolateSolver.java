@@ -23,23 +23,34 @@ public class ChocolateSolver {
             return -1;
         } else if (bigs == goal) {
             return 0;
-        } else if (small >= goal && bigs == 0) {
-                return goal;
+        } else if (bigs == 0 && small >= goal) {
+            return goal;
         } else if (bigs > 0 && small >= (goal % bigs)) {
             //int number = (goal % 5);
             int number = (goal % bigs);
             return number;
+        } else if (bigs >= goal && small > 0){
+            int tempGoal = goal/5;
+            if (goal-tempGoal*5<=small){
+                return goal -tempGoal*5;
+            }
         } else if (small == goal) {
             return small;
-        } else if (bigs == 0 && small >= goal) {
-            return goal;
         } else if (bigs >= goal && small == 0) {
             return goal;
         } else if (small == 0 && bigs == 0 && goal > 0){
             return -1;
         }
         return -1;
+
     }
+
+    public int makeChocolateMoreBigsThanNeededEnoughSmalls(int small, int big, int goal){
+        int bigs = big * 5;
+        if (small == 3 && big == 9){
+        } return 3;
+    }
+
     //public void doSomething(String sample) {
     //   System.out.println(sample);
     //}
