@@ -31,8 +31,8 @@ public class ChocolateSolver {
             return number;
         } else if (bigs >= goal && small > 0){
             int tempGoal = goal/5;
-            if (goal-tempGoal*5<=small){
-                return goal -tempGoal*5;
+            if (goal - tempGoal*5<=small) { 
+                return goal - tempGoal*5;
             }
         } else if (small == goal) {
             return small;
