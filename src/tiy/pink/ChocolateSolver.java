@@ -21,16 +21,22 @@ public class ChocolateSolver {
         if (small < 0 || big < 0 || goal < 0) {
             System.out.println("Anything less than zero isn't allowed");
             return -1;
-        } else if (big == goal) {
+        } else if (bigs == goal) {
             return 0;
-        } else if (small >= goal - bigs) {
-            if (big == 0) {
-                return goal ;
-            } else {
-                return (goal % bigs);
-            }
-        }else if (small == goal){
+        } else if (small >= goal && bigs == 0) {
+                return goal;
+        } else if (bigs > 0 && small >= (goal % bigs)) {
+            //int number = (goal % 5);
+            int number = (goal % bigs);
+            return number;
+        } else if (small == goal) {
             return small;
+        } else if (bigs == 0 && small >= goal) {
+            return goal;
+        } else if (bigs >= goal && small == 0) {
+            return goal;
+        } else if (small == 0 && bigs == 0 && goal > 0){
+            return -1;
         }
         return -1;
     }
