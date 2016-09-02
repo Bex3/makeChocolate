@@ -25,13 +25,16 @@ public class ChocolateSolver {
             return 0;
         } else if (bigs == 0 && small >= goal) {
             return goal;
-        } else if (bigs > 0 && small >= (goal % bigs)) {
+        } else if (bigs > 0 && small >= (goal % bigs) && (big >= (goal / 5))) {
             //int number = (goal % 5);
             int number = (goal % bigs);
             return number;
+        } else if (bigs > 0 && (bigs + small) >= goal && goal > bigs) {
+            int number = goal - bigs;
+            return number;
         } else if (bigs >= goal && small > 0){
             int tempGoal = goal/5;
-            if (goal - tempGoal*5<=small) { 
+            if (goal - tempGoal*5<=small) {
                 return goal - tempGoal*5;
             }
         } else if (small == goal) {
@@ -45,11 +48,6 @@ public class ChocolateSolver {
 
     }
 
-    public int makeChocolateMoreBigsThanNeededEnoughSmalls(int small, int big, int goal){
-        int bigs = big * 5;
-        if (small == 3 && big == 9){
-        } return 3;
-    }
 
     //public void doSomething(String sample) {
     //   System.out.println(sample);
